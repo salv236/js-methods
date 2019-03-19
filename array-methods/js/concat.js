@@ -12,7 +12,7 @@
 
 console.log('merge of nested multi dimension arrays');
 
-let multiArray = [
+let multiArray = [           // ---> this is ONE array (contains other arrays). concat doesn't go deep into nested arrays
     ['a', 'b', 'c', 'd'],
     ['e', 'f', 'g', 'h'],
     ['i', 'j', 'k', 'l']
@@ -23,7 +23,15 @@ let newArray = []
 
 console.log(multiArray);
 
-let migrate = newArray.concat(multiArray);
+let migrate = newArray.concat(multiArray);  //  ---> concat will just "stick" this ONE big array in whole onto the end of newArray
 
-console.log(migrate);
+//further reading - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
+
+//EXAMPLE OF A NESTED ARRAY
+let normalArray = [0,1,2,3,4,5];
+
+//nested
+let nestedArray = [6, 7, [8,9, [10]]]; 
+
+console.log(normalArray.concat(nestedArray));
 
